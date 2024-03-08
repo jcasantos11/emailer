@@ -16,11 +16,10 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('first_name');
             $table->string('middle_name')->nullable();
-            $table->string('full_name')->virtualAs("CONCAT(last_name, ', ', first_name)");
+            $table->string('full_name')->virtualAs("CONCAT(last_name, ', ', first_name, ' ', middle_name)");
             $table->text('address')->nullable();
             $table->json('email')->nullable();
             $table->json('contact_number')->nullable();
-
             $table->timestamps();
         });
     }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('client_id')->constrained();
             $table->foreignId('block_id')->constrained();
+            $table->date('date_published');
             $table->string('title');
             $table->string('link');
             $table->string('source');
